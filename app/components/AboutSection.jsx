@@ -15,8 +15,6 @@ const TAB_DATA = [
         <li>Next.js</li>
         <li>Ruby on Rails</li>
         <li>TypeScript</li>
-        <li>Cypress</li>
-        <li>RSpec</li>
         <li>AWS</li>
         <li>Docker</li>
       </ul>
@@ -58,7 +56,7 @@ const AboutSection = () => {
   return (
     <section className='text-white'>
       <div className='md:grid md:grid-cols-2 gap-8 items-center px-4 py-8 xl:gap-16 sm:py-16 xl:px-16'>
-        <Image src='/images/about-image.png' width={500} height={500} />
+        <Image src='/images/about-image.png' alt="About Image" width={500} height={500} />
         <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
           <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
           <p className='text-base lg:text-lg'>
