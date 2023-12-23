@@ -3,8 +3,19 @@ import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const HeroSection = () => {
+  const handleDownload = () => {
+    // Assuming 'resume.pdf' is the name of your resume file
+    const downloadLink = document.createElement('a');
+    downloadLink.href = '/CathyLiu_BCS_QSWE.pdf'; 
+    downloadLink.download = 'CathyLiu_BCS_QSWE.pdf';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
+
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -33,11 +44,16 @@ const HeroSection = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
           <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white">
-                Hire Me
+            <button 
+              className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
+            >
+              Hire Me
             </button>
-            <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover: bg-slate-800 text-white mt-3">
-                <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">Download CV</span>
+            <button 
+              className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover: bg-slate-800 text-white mt-3 animate-bounce"
+              onClick={handleDownload}
+            >
+              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">Download CV</span>
             </button>
           </div>
         </div>   
