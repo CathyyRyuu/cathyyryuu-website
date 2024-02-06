@@ -16,7 +16,7 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Photography Portfolio Website",
+    title: "Vision Board Compiler",
     description: "Project 2 description",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
@@ -37,7 +37,7 @@ const projectsData = [
     title: "Food Ordering App",
     description: "Project 4 description",
     image: "/images/projects/4.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "/"
   },
@@ -52,7 +52,7 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "React Portfolio Website",
+    title: "Project 6 Title",
     description: "Project 6 description",
     image: "/images/projects/6.png",
     tag: ["All", "Mobile"],
