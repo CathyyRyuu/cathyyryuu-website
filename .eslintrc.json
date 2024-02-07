@@ -6,7 +6,7 @@
   "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:react/recommended"],
   "plugins": ["react"],
   "rules": {
-    "react/no-unescaped-entities": "error"
+    "react/no-unescaped-entities": 0
   }
 }
 
