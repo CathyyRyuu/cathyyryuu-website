@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { motion } from "framer-motion";
 
 const variants = {
@@ -22,12 +21,5 @@ const TabButton = ({ active, selectTab, children}) => {
     </button>
   )
 }
-
-// Prop type validation
-TabButton.propTypes = {
-  active: PropTypes.bool.isRequired,
-  selectTab: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
-};
 
 export default TabButton;
