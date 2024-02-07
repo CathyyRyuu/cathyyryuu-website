@@ -8,8 +8,8 @@ const projectsData = [
   {
     id: 1,
     title: "React Portfolio Website",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
+    description: "A personal website showcasing my work and achievements, built using modern web development tools",
+    image: "/images/projects/react-portfolio-website.png",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/"
@@ -17,46 +17,46 @@ const projectsData = [
   {
     id: 2,
     title: "Vision Board Compiler",
-    description: "Project 2 description",
+    description: "Empower yourself to create a digital vision board that inspires and motivates, tailored to your aspirations",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
   },
   {
     id: 3,
     title: "E-commerce Application",
-    description: "Project 3 description",
+    description: "An online platform offering a seamless shopping experience, created with Next.js, Chakra-UI, and MongoDB database",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
   },
   {
     id: 4,
     title: "Food Ordering App",
-    description: "Project 4 description",
+    description: "Conveniently order your favorite meals with ease and simplicity, bringing delicious cuisine straight to your doorstep",
     image: "/images/projects/4.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
   },
   {
     id: 5,
-    title: "Portfolio Smart Analyzer",
-    description: "Project 5 description",
+    title: "Expense Smart Analyzer",
+    description: "Effortlessly track and manage your expenses with an intuitive and interactive tool, providing insights to optimize your financial habits",
     image: "/images/projects/5.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
   },
   {
     id: 6,
-    title: "Project 6 Title",
-    description: "Project 6 description",
+    title: "AI Chatbot",
+    description: "A chatbot using natural language processing (NLP) techniques to understand and respond to user queries",
     image: "/images/projects/6.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
   },
 ];

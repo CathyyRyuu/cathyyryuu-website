@@ -34,10 +34,10 @@ const HeroSection = () => {
                 1000, // wait 1s before replacing "Mice" with "Hamsters"
                 "Software Engineer",
                 1000,
-                "Full Stack Developer",
-                1000,
-                "Passionate about FinTech",
-                1000,
+                // "Full Stack Developer",
+                // 1000,
+                // "Passionate about FinTech",
+                // 1000,
               ]}
               wrapper="span"
               speed={50}
