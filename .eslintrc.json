@@ -7,8 +7,8 @@
   "plugins": ["react"],
   "rules": {
     "react/no-unescaped-entities": 0,
-    "no-unused-vars": "off",
-    "react/prop-types": "off" 
+    "no-unused-vars": 0,
+    "react/prop-types": 0
   }
 }
 
