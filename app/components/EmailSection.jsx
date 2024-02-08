@@ -8,7 +8,7 @@ import Image from "next/image";
 // need domain set up.
 
 const EmailSection = () => {
-  // change this useState to true when email function is implemented
+  // change this emailSubmitted to false when email function is implemented
   const [emailSubmitted, setEmailSubmitted] = useState(true);
 
   const handleSubmit = async (e) => {
@@ -31,7 +31,7 @@ const EmailSection = () => {
 
     const response = await fetch(endpoint, options);
     const resData = await response.json();
-    // console.log('resData');
+    console.log('resData');
 
     if (response.status === 200) {
       console.log('Message sent.');
@@ -46,7 +46,7 @@ const EmailSection = () => {
         <h5 className='text-xl font-bold text-white my-2'>Let's Connect !</h5>
         <p className='text-[#ADB7BE] mb-4 max-w-md'>
           {" "}
-          I'm currently looking for full time opportunities in software development.
+          I'm always looking for new opportunities in software development.
           Feel free to connect with me!
         </p>
         <div className='socials flex flex-row gap-2'>
