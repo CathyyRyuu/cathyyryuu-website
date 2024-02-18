@@ -52,9 +52,9 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "AI Chatbot",
-    description: "A chatbot using natural language processing (NLP) techniques to understand and respond to user queries",
-    image: "/images/projects/6.png",
+    title: "NerdScript Bot🤖: Guide to Quick and Insightful Book Summaries",
+    description: "NerdScript Bot is your ultimate companion in the world of literature. With its cutting-edge AI powered by ChatGPT 3.5 Turbo, NerdScript Bot transforms lengthy book summaries into concise and insightful nuggets of knowledge.",
+    image: "/images/projects/book-summary-app.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
