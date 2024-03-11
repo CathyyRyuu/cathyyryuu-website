@@ -11,13 +11,13 @@ const projectsData = [
     description: "A personal website showcasing my work and achievements, built using modern web development tools",
     image: "/images/projects/react-portfolio-website.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/CathyyRyuu/cathyyryuu-website",
     previewUrl: "/"
   },
   {
     id: 2,
-    title: "Vision Board Compiler",
-    description: "Empower yourself to create a digital vision board that inspires and motivates, tailored to your aspirations",
+    title: "My Workout App",
+    description: "Transform your fitness journey with My Workout App's personalized workouts and expert guidance.",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/CathyyRyuu",
@@ -57,7 +57,7 @@ const projectsData = [
     image: "/images/projects/book-summary-app.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "/"
+    previewUrl: "book-summary-app.vercel.app"
   },
 ];
 
