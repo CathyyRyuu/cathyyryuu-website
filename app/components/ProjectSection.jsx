@@ -16,18 +16,18 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "My Workout App",
+    title: "My Workout App (in Progress...)",
     description: "Transform your fitness journey with My Workout App's personalized workouts and expert guidance.",
-    image: "/images/projects/2.png",
-    tag: ["All", "Web"],
+    image: "/images/projects/my-workout-app.png",
+    tag: ["All", "Mobile"],
     gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
   },
   {
     id: 3,
-    title: "E-commerce Application",
+    title: "E-commerce Application (in Progress...)",
     description: "An online platform offering a seamless shopping experience, created with Next.js, Chakra-UI, and MongoDB database",
-    image: "/images/projects/3.png",
+    image: "/images/projects/e-commerce-website.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
@@ -36,17 +36,17 @@ const projectsData = [
     id: 4,
     title: "Food Ordering App",
     description: "Conveniently order your favorite meals with ease and simplicity, bringing delicious cuisine straight to your doorstep",
-    image: "/images/projects/4.png",
+    image: "/images/projects/food-ordering-app.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
   },
   {
     id: 5,
-    title: "Expense Smart Analyzer",
-    description: "Effortlessly track and manage your expenses with an intuitive and interactive tool, providing insights to optimize your financial habits",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
+    title: "Smart Expense Analyzer (in Progress...)",
+    description: "Effortlessly track and manage your expenses with an intuitive and interactive tool utilizing blockchain (decentralized ledger), providing insights to optimize your financial habits",
+    image: "/images/projects/expense-tracker.png",
+    tag: ["All", "Web", "Mobile"],
     gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
   },
@@ -55,7 +55,7 @@ const projectsData = [
     title: "NerdScript Bot🤖: Guide to Quick and Insightful Book Summaries",
     description: "NerdScript Bot is your ultimate companion in the world of literature. With its cutting-edge AI powered by ChatGPT 3.5 Turbo, NerdScript Bot transforms lengthy book summaries into concise and insightful nuggets of knowledge.",
     image: "/images/projects/book-summary-app.png",
-    tag: ["All", "Mobile"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "book-summary-app.vercel.app"
   },
