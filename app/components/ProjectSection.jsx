@@ -25,7 +25,7 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "E-commerce Application (in Progress...)",
+    title: "E-commerce Application",
     description: "An online platform offering a seamless shopping experience, created with Next.js, Chakra-UI, and MongoDB database",
     image: "/images/projects/e-commerce-website.png",
     tag: ["All", "Web"],
