@@ -30,7 +30,7 @@ const projectsData = [
     image: "/images/projects/e-commerce-website.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "ecommerce-website-m7cjl4rni-cathyyryuus-projects.vercel.app"
+    previewUrl: "ecommerce-website-chi-six.vercel.app"
   },
   {
     id: 4,
