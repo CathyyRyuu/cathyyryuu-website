@@ -57,7 +57,7 @@ const projectsData = [
     image: "/images/projects/book-summary-app.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "book-summary-app.vercel.app"
+    previewUrl: "https://book-summary-app.vercel.app/"
   },
 ];
 
