@@ -34,10 +34,10 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Food Ordering App",
-    description: "Conveniently order your favorite meals with ease and simplicity, bringing delicious cuisine straight to your doorstep",
-    image: "/images/projects/food-ordering-app.png",
-    tag: ["All", "Mobile"],
+    title: "Trading Analytics Dashboard",
+    description: "Empower your trading decisions with an interactive dashboard that visualizes key performance metrics, historical data, and actionable insights—all in one place",
+    image: "/images/projects/trading-analytics-dashboard.png",
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "/"
   },

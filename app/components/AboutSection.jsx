@@ -9,11 +9,12 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className='list-disc pl-2'>
-        <li>Django</li>
-        <li>React</li>
-        <li>PostgreSQL</li>
+        <li>FastAPI</li>
         <li>Next.js</li>
         <li>Ruby on Rails</li>
+        <li>Django</li>
+        <li>PostgreSQL</li>
+        <li>JavaScript</li>
         <li>TypeScript</li>
         <li>AWS</li>
         <li>Docker</li>
@@ -35,7 +36,6 @@ const TAB_DATA = [
     id: "certification",
     content: (
       <ul className='list-disc pl-2'>
-        <li>AWS Cloud Practitioner</li>
         <li>CFA Level II Candidate</li>
         <li>SAS Base Certificate</li>
       </ul>
@@ -61,7 +61,7 @@ const AboutSection = () => {
           <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
           <p className='text-base lg:text-lg'>
             I am Full-Stack Software Engineer, armed with a dual degree in Finance and Computer Science, 
-            my technical expertise spans React, Django, Python, Next.js, Ruby on Rails, TypeScript, and more. 
+            my technical expertise spans Next.js, Django, Python, FastAPI, Ruby on Rails, TypeScript, JavaScript, and more. 
             I am also proficient in database management, cloud platforms (AWS), and containerization (Docker).
             I'm a self-initiator with a passion for fintech. 
             As someone who believes in lifelong learning, I am always looking to expand my knowledge and skillset.
