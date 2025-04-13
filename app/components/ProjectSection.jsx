@@ -39,7 +39,7 @@ const projectsData = [
     image: "/images/projects/trading-analytics-dashboard.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "/"
+    previewUrl: "/trading-dashboard"
   },
   {
     id: 5,
