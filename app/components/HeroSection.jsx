@@ -39,16 +39,16 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-white text-base sm:text-lg lg:text-xl">
-            "When you want something, all the universe conspires in helping you
-            to achieve it."
+            {`"When you want something, all the universe conspires in helping you
+            to achieve it."`}
           </p>
           <footer className="text-white mt-2 mb-6 font-semibold text-sm">
-            - Paulo Coelho, <cite className="italic">The Alchemist</cite>
+            {`- Paulo Coelho,`} <cite className="italic">{`The Alchemist`}</cite>
           </footer>
 
           <div>
             <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white">
-              Hi There
+              {`Hi There :)`}
             </button>
             <button
               className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover: bg-slate-800 text-white mt-3 animate-bounce"
