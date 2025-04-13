@@ -1,14 +1,16 @@
-// {
-//   "extends": "next/core-web-vitals"
-// }
-
 {
-  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["react"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "react/no-unescaped-entities": 0,
     "no-unused-vars": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": "off",
   }
 }
-
