@@ -114,7 +114,7 @@ const EmailSection = () => {
             />
           </div>
           <p className="text-red-400 text-sm mt-2 mb-6">
-            Sorry, Email functionality is currently unavailable.
+            Sorry, I am not taking email request at the moment.
           </p>
           <button
             type="submit"
