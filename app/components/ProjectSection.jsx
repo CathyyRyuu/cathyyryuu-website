@@ -3,63 +3,7 @@ import React, { useState, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
 import { motion, useInView } from "framer-motion";
-
-const projectsData = [
-  {
-    id: 1,
-    title: "React Portfolio Website",
-    description: "A personal website showcasing my work and achievements, built using modern web development tools",
-    image: "/images/projects/react-portfolio-website.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/CathyyRyuu/cathyyryuu-website",
-    previewUrl: "/"
-  },
-  {
-    id: 2,
-    title: "My Workout App (in Progress...)",
-    description: "Transform your fitness journey with My Workout App's personalized workouts and expert guidance.",
-    image: "/images/projects/my-workout-app.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "/"
-  },
-  {
-    id: 3,
-    title: "E-commerce Application",
-    description: "An online platform offering a seamless shopping experience, created with Next.js, Chakra-UI, and MongoDB database",
-    image: "/images/projects/e-commerce-website.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "ecommerce-website-chi-six.vercel.app"
-  },
-  {
-    id: 4,
-    title: "Trading Analytics Dashboard",
-    description: "Empower your trading decisions with an interactive dashboard that visualizes key performance metrics, historical data, and actionable insights—all in one place",
-    image: "/images/projects/trading-analytics-dashboard.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "/trading-dashboard"
-  },
-  {
-    id: 5,
-    title: "Smart Expense Analyzer (in Progress...)",
-    description: "Effortlessly track and manage your expenses with an intuitive and interactive tool utilizing blockchain (decentralized ledger), providing insights to optimize your financial habits",
-    image: "/images/projects/expense-tracker.png",
-    tag: ["All", "Web", "Mobile"],
-    gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "/"
-  },
-  {
-    id: 6,
-    title: "NerdScript Bot🤖: Guide to Quick and Insightful Book Summaries",
-    description: "NerdScript Bot is your ultimate companion in the world of literature. With its cutting-edge AI powered by ChatGPT 3.5 Turbo, NerdScript Bot transforms lengthy book summaries into concise and insightful nuggets of knowledge.",
-    image: "/images/projects/book-summary-app.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "https://book-summary-app.vercel.app/"
-  },
-];
+import projectsData from "../data/ProjectData";
 
 const ProjectSection = () => {
   const [tag,setTag] = useState("All");
@@ -105,6 +49,7 @@ const ProjectSection = () => {
         {filteredProjects.map((project, index) => (
           <motion.li 
             key={index}
+            className="h-full"
             variants={cardVariants} 
             initial="initial" 
             animate={isInView ? "animate" : "initial"}
@@ -117,6 +62,8 @@ const ProjectSection = () => {
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              techStack={project.techStack}
+              status={project.status}
             />
           </motion.li>
         ))}
