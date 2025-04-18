@@ -1,10 +1,8 @@
 import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import {
-  RocketLaunchIcon,
-  WrenchScrewdriverIcon,
-} from "@heroicons/react/24/solid";
+import FirecrackerAnimatedIcon from "./AnimatedIcons/FirecrackerAnimatedIconWrapper";
+import MaintenanceAnimatedIcon from "./AnimatedIcons/MaintenanceAnimatedIconWrapper";
 
 const ProjectCard = ({
   imgUrl,
@@ -39,12 +37,8 @@ const ProjectCard = ({
       <div className="text-white rounded-b-xl mt-3 bg-[#181818] px-4 py-6">
         <h5 className="font-xl font-semibold flex gap-2 mb-2">
           {title}
-          {status === "Deployed" && (
-            <RocketLaunchIcon className="h-5 w-5 text-blue-500" />
-          )}
-          {status === "Coding ..." && (
-            <WrenchScrewdriverIcon className="h-5 w-5 text-yellow-500 animate-spin-slow" />
-          )}
+          {status === "Deployed" && <FirecrackerAnimatedIcon />}
+          {status === "Coding ..." && <MaintenanceAnimatedIcon />}
         </h5>
         <p className="mb-2 text-[#ADB7BE]">{description}</p>
         {techStack?.length > 0 && (
