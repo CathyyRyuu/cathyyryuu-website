@@ -46,13 +46,20 @@ const EmailSection = () => {
     >
       <div className="bg-radial-gradient(ellipse at center,_var(--tw-gradient-stops)) from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">Let's Connect !</h5>
+        <h5 className="text-xl font-bold text-white mt-2">Let's Connect !</h5>
+        <Image
+          src="/images/business_card.png"
+          alt="Business Card"
+          width={512}
+          height={289}
+          className="my-2"
+        />
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
           I'm always looking for new opportunities in software development. Feel
           free to connect with me!
         </p>
-        <div className="socials flex flex-row gap-2">
+        <div className="socials flex flex-row gap-2 mb-5">
           <Link href="https://github.com/CathyyRyuu">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
