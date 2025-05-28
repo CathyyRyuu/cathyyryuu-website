@@ -56,13 +56,13 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "NerdScript Bot🤖",
-    description: "NerdScript Bot is your ultimate companion in the world of literature, transforming lengthy book summaries into concise and insightful nuggets of knowledge.",
+    title: "PlotTwist",
+    description: "PlotTwist is your ultimate companion in the world of literature, transforming lengthy book summaries into concise and insightful nuggets of knowledge.",
     image: "/images/projects/book-summary-app.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/CathyyRyuu",
     previewUrl: "https://book-summary-app.vercel.app/",
-    techStack: ["Next.js", "Tailwind CSS", "ChatGPT 3.5 Turbo", "Vercel"],
+    techStack: ["Next.js", "Tailwind CSS", "Mantine UI", "ChatGPT 4o Mini", "Vercel"],
     status: "Deployed",
   },
 ];
