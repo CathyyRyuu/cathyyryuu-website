@@ -54,10 +54,12 @@ const progressList = [
 const AchievementsSection = () => {
   return (
     <div className="bg-[#1e1e1e] shadow-lg rounded-3xl px-4 py-6 xl:gap-16 sm:py-12 xl:px-12">
-        <h2 className="text-2xl font-bold text-white mb-4 text-center lg:text-4xl">
-          Skills
-        </h2>
-        <div className="py-8 px-16 flex flex-row items-center justify-between">
+      <h2 className="text-2xl font-bold text-white mb-6 text-center lg:text-4xl">
+        Skills
+      </h2>
+      {/* Achievements carousel */}
+      <div className="py-4 overflow-x-auto scrollbar-hide">
+        <div className="flex flex-nowrap gap-6 sm:px-4 px-2 snap-x snap-mandatory lg:justify-between">
           {achievementsList.map((achievement, index) => {
             return (
               <div
@@ -70,7 +72,7 @@ const AchievementsSection = () => {
                     includeComma
                     animateToNumber={parseInt(achievement.value)}
                     locale="en-US"
-                    className="text-white test-4xl font-bold"
+                    className="text-white text-2xl font-bold lg:text-4xl"
                     configs={(_, index) => {
                       return {
                         mass: 1,
@@ -86,25 +88,23 @@ const AchievementsSection = () => {
             );
           })}
         </div>
+      </div>
 
-        <div className="py-8 px-16 flex flex-row items-center justify-between">
-          {progressList.map((progress, index) => {
-            const percentage = Math.round(
-              (progress.value / progress.outOf) * 100
-            );
-            return (
-              <div key={index} className="flex flex-col items-center space-y-2">
-                <RingProgress
-                  percentage={percentage}
-                  label={`${percentage}%`}
-                />
-                <p className="text-white text-sm sm:text-base text-center">
-                  {progress.label}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+      <div className="py-8 px-4 sm:px-8 flex flex-wrap justify-center gap-8 lg:justify-between">
+        {progressList.map((progress, index) => {
+          const percentage = Math.round(
+            (progress.value / progress.outOf) * 100
+          );
+          return (
+            <div key={index} className="flex flex-col items-center space-y-2">
+              <RingProgress percentage={percentage} label={`${percentage}%`} />
+              <p className="text-white text-sm sm:text-base text-center">
+                {progress.label}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
