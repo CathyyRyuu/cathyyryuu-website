@@ -43,7 +43,8 @@ const HeroSection = () => {
             to achieve it."`}
           </p>
           <footer className="text-white mt-2 mb-6 font-semibold text-sm">
-            {`- Paulo Coelho,`} <cite className="italic">{`The Alchemist`}</cite>
+            {`- Paulo Coelho,`}{" "}
+            <cite className="italic">{`The Alchemist`}</cite>
           </footer>
 
           <div>
