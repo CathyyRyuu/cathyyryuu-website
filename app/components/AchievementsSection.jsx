@@ -59,7 +59,7 @@ const AchievementsSection = () => {
       </h2>
       {/* Achievements carousel */}
       <div className="py-4 overflow-x-auto scrollbar-hide">
-        <div className="flex flex-nowrap gap-6 sm:px-4 px-2 snap-x snap-mandatory lg:justify-between">
+        <div className="flex flex-nowrap gap-6 lg:px-12 snap-x snap-mandatory lg:justify-between">
           {achievementsList.map((achievement, index) => {
             return (
               <div

@@ -12,9 +12,12 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="lg:py-16">
+    <section className="lg:py-6">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
+          {/* <button className="px-2 py-1 w-full sm:w-fit mr-4 bg-gradient-to-br from-secondary-600 to-indigo-600 hover:bg-slate-200 text-white text-md rounded-lg opacity-70 border border-white">
+            {`Welcome to my Portfolio`}
+          </button> */}
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
               Hello, I'm{" "}
@@ -47,10 +50,7 @@ const HeroSection = () => {
             <cite className="italic">{`The Alchemist`}</cite>
           </footer>
 
-          <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white">
-              {`Hi There :)`}
-            </button>
+          <div className="flex-end">
             <button
               className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover: bg-slate-800 text-white mt-3 animate-bounce"
               onClick={handleConnect}

@@ -42,9 +42,9 @@ const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-16 gap-4 relative"
+      className="grid md:grid-cols-2 py-6 lg:py-16 gap-4 relative"
     >
-      <div className="bg-radial-gradient(ellipse at center,_var(--tw-gradient-stops)) from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+      {/* <div className="bg-radial-gradient(ellipse at center,_var(--tw-gradient-stops)) from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div> */}
       <div className="z-10">
         <h5 className="text-xl font-bold text-white mt-2">Let's Connect !</h5>
         <Image
@@ -54,7 +54,7 @@ const EmailSection = () => {
           height={289}
           className="my-2"
         />
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+        <p className="text-white mb-4 max-w-md">
           {" "}
           I'm always looking for new opportunities in software development. Feel
           free to connect with me!
@@ -74,7 +74,7 @@ const EmailSection = () => {
           <div className="mb-6">
             <label
               htmlFor="email"
-              className="text-white block mb-2 font-medium"
+              className="text-primary-600 block mb-2 font-medium"
             >
               Your Email
             </label>
@@ -83,7 +83,8 @@ const EmailSection = () => {
               type="email"
               id="email"
               required
-              className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              // className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              className="bg-white bg-opacity-10 border border-white placeholder-white text-white text-sm rounded-lg block w-full p-2.5"
               placeholder="user@example.com"
             />
           </div>
@@ -91,7 +92,7 @@ const EmailSection = () => {
           <div className="mb-6">
             <label
               htmlFor="subject"
-              className="text-white block mb-2 font-medium"
+              className="text-primary-600 block mb-2 font-medium"
             >
               Subject
             </label>
@@ -100,7 +101,8 @@ const EmailSection = () => {
               type="text"
               id="subject"
               required
-              className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              // className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              className="bg-white bg-opacity-10 border border-white placeholder-white text-white text-sm rounded-lg block w-full p-2.5"
               placeholder="Hi there!"
             />
           </div>
@@ -108,7 +110,7 @@ const EmailSection = () => {
           <div className="mb-6">
             <label
               htmlFor="message"
-              className="text-white block mb-2 font-medium"
+              className="text-primary-600 block mb-2 font-medium"
             >
               Message
             </label>
@@ -116,11 +118,11 @@ const EmailSection = () => {
               name="message"
               id="message"
               required
-              className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              className="bg-white bg-opacity-10 border border-white placeholder-white text-white text-sm rounded-lg block w-full p-2.5"
               placeholder="Let's grab a coffee!"
             />
           </div>
-          <p className="text-red-400 text-sm mt-2 mb-6">
+          <p className="text-primary-500 text-sm mt-2 mb-6">
             Sorry, I am not taking email request at the moment.
           </p>
           <button
@@ -135,6 +137,7 @@ const EmailSection = () => {
             </p>
           )}
         </form>
+   
       </div>
     </section>
   );

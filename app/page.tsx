@@ -18,10 +18,14 @@ export default function Home() {
           <AchievementsSection />
         </div>
       </div>
-      <div className="container mt-4 mx-auto px-12 py-4">
+      <div className="container my-8 lg:my-16 mx-auto px-12 py-4">
         <AboutSection />
         <ProjectsSection />
-        <EmailSection />
+      </div>
+      <div className="w-full bg-[url('/images/gradient_bg.avif')] bg-cover bg-center bg-no-repeat">
+        <div className="container mx-auto px-12 py-4">
+          <EmailSection />
+        </div>
       </div>
       <Footer />
     </main>
