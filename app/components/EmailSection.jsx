@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import GithubIcon from "../../public/github-icon.svg";
 import LinkedinIcon from "../../public/linkedin-icon.svg";
 import Link from "next/link";
@@ -8,73 +8,46 @@ import Image from "next/image";
 // need domain to set up.
 
 const EmailSection = () => {
-  // change this emailSubmitted to false when email function is implemented
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-    console.log("resData");
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
-    }
-  };
-
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 py-6 lg:py-16 gap-4 relative"
+      className="grid scroll-mt-24 gap-8 py-12 md:grid-cols-[0.9fr_1.1fr] lg:py-16"
     >
-      {/* <div className="bg-radial-gradient(ellipse at center,_var(--tw-gradient-stops)) from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div> */}
-      <div className="z-10">
-        <h5 className="text-xl font-bold text-white mt-2">Let's Connect !</h5>
+      <div>
+        <p className="eyebrow mb-3">Contact</p>
+        <h2 className="section-title mb-4">Let&apos;s connect</h2>
+        <p className="mb-6 max-w-md leading-7 text-slate-300">
+          I&apos;m always open to thoughtful software, fintech, and AI product
+          conversations. LinkedIn is the best place to reach me right now.
+        </p>
         <Image
           src="/images/business_card.png"
           alt="Business Card"
           width={512}
           height={289}
-          className="my-2"
+          className="my-2 rounded-2xl border border-white/10"
         />
-        <p className="text-white mb-4 max-w-md">
-          {" "}
-          I'm always looking for new opportunities in software development. Feel
-          free to connect with me!
-        </p>
-        <div className="socials flex flex-row gap-2 mb-5">
-          <Link href="https://github.com/CathyyRyuu">
-            <Image src={GithubIcon} alt="Github Icon" />
+        <div className="socials mt-5 flex flex-row gap-3">
+          <Link
+            href="https://github.com/CathyyRyuu"
+            className="rounded-full border border-white/10 bg-white/[0.04] p-3 transition hover:border-sky-300"
+          >
+            <Image src={GithubIcon} alt="Github Icon" className="h-5 w-5" />
           </Link>
-          <Link href="https://www.linkedin.com/in/weiqi-liu/">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
+          <Link
+            href="https://www.linkedin.com/in/weiqi-liu/"
+            className="rounded-full border border-white/10 bg-white/[0.04] p-3 transition hover:border-sky-300"
+          >
+            <Image src={LinkedinIcon} alt="Linkedin Icon" className="h-5 w-5" />
           </Link>
         </div>
       </div>
-      <div>
-        {/* <form className='flex flex-col' onSubmit={handleSubmit}> */}
-        <form className="flex flex-col">
+      <div className="surface-panel rounded-[2rem] p-5 sm:p-6">
+        <form className="flex flex-col" onSubmit={(event) => event.preventDefault()}>
           <div className="mb-6">
             <label
               htmlFor="email"
-              className="text-primary-600 block mb-2 font-medium"
+              className="mb-2 block text-sm font-medium text-slate-300"
             >
               Your Email
             </label>
@@ -83,8 +56,8 @@ const EmailSection = () => {
               type="email"
               id="email"
               required
-              // className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              className="bg-white bg-opacity-10 border border-white placeholder-white text-white text-sm rounded-lg block w-full p-2.5"
+              disabled
+              className="block w-full rounded-2xl border border-white/10 bg-white/[0.04] p-3 text-sm text-white placeholder:text-slate-500 disabled:cursor-not-allowed disabled:opacity-60"
               placeholder="user@example.com"
             />
           </div>
@@ -92,7 +65,7 @@ const EmailSection = () => {
           <div className="mb-6">
             <label
               htmlFor="subject"
-              className="text-primary-600 block mb-2 font-medium"
+              className="mb-2 block text-sm font-medium text-slate-300"
             >
               Subject
             </label>
@@ -101,8 +74,8 @@ const EmailSection = () => {
               type="text"
               id="subject"
               required
-              // className="bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              className="bg-white bg-opacity-10 border border-white placeholder-white text-white text-sm rounded-lg block w-full p-2.5"
+              disabled
+              className="block w-full rounded-2xl border border-white/10 bg-white/[0.04] p-3 text-sm text-white placeholder:text-slate-500 disabled:cursor-not-allowed disabled:opacity-60"
               placeholder="Hi there!"
             />
           </div>
@@ -110,7 +83,7 @@ const EmailSection = () => {
           <div className="mb-6">
             <label
               htmlFor="message"
-              className="text-primary-600 block mb-2 font-medium"
+              className="mb-2 block text-sm font-medium text-slate-300"
             >
               Message
             </label>
@@ -118,24 +91,22 @@ const EmailSection = () => {
               name="message"
               id="message"
               required
-              className="bg-white bg-opacity-10 border border-white placeholder-white text-white text-sm rounded-lg block w-full p-2.5"
+              disabled
+              className="block min-h-32 w-full rounded-2xl border border-white/10 bg-white/[0.04] p-3 text-sm text-white placeholder:text-slate-500 disabled:cursor-not-allowed disabled:opacity-60"
               placeholder="Let's grab a coffee!"
             />
           </div>
-          <p className="text-primary-500 text-sm mt-2 mb-6">
-            Sorry, I am not taking email request at the moment.
+          <p className="mb-6 mt-2 rounded-2xl border border-sky-300/20 bg-sky-300/10 px-4 py-3 text-sm text-sky-100">
+            The contact form is paused for now. Please use LinkedIn for the
+            fastest response.
           </p>
           <button
             type="submit"
-            className="opacity-75 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:opacity-100 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+            disabled
+            className="w-full cursor-not-allowed rounded-full bg-white/15 px-5 py-3 text-sm font-semibold text-white opacity-60"
           >
-            Send Message
+            Message form paused
           </button>
-          {emailSubmitted && (
-            <p className="text-green-300 text-sm mt-2">
-              Email sent successfully!
-            </p>
-          )}
         </form>
    
       </div>

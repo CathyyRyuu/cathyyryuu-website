@@ -28,7 +28,7 @@ const projectsData = [
     image: "/images/projects/e-commerce-website.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/CathyyRyuu",
-    previewUrl: "ecommerce-website-chi-six.vercel.app",
+    previewUrl: "https://ecommerce-website-chi-six.vercel.app",
     techStack: ["Next.js", "Chakra-UI", "MongoDB", "Vercel"],
     status: "Deployed",
   },
