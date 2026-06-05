@@ -24,11 +24,20 @@ const ProjectSection = () => {
   };
 
   return (
-    <section id="projects">
-      <h2 className='text-center text-2xl lg:text-4xl font-bold text-white mt-4 mb-4'>
-        My Projects
-      </h2>
-      <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
+    <section id="projects" className="scroll-mt-24 py-8 lg:py-14">
+      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="eyebrow mb-3">Selected work</p>
+          <h2 className='section-title'>
+            Workflow impact, translated into systems
+          </h2>
+        </div>
+        <p className="max-w-xl text-sm leading-6 text-slate-400">
+          Sanitized examples of AI workflow transformation alongside personal
+          builds that show the technical foundation behind the advisory work.
+        </p>
+      </div>
+      <div className='mb-8 flex flex-row items-center gap-2 overflow-x-auto text-white'>
         <ProjectTag 
           onClick={handleTagChange} 
           name="All" 
@@ -36,16 +45,16 @@ const ProjectSection = () => {
         />
         <ProjectTag 
           onClick={handleTagChange} 
-          name="Web" 
-          isSelected={tag === "Web"}
+          name="Case Studies" 
+          isSelected={tag === "Case Studies"}
         />
         <ProjectTag 
           onClick={handleTagChange} 
-          name="Mobile" 
-          isSelected={tag === "Mobile"}
+          name="Personal Projects" 
+          isSelected={tag === "Personal Projects"}
         />
       </div>
-      <ul ref={ref} className='grid md:grid-cols-3 gap-8 md:gap-12'>
+      <ul ref={ref} className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
         {filteredProjects.map((project, index) => (
           <motion.li 
             key={index}
@@ -64,6 +73,8 @@ const ProjectSection = () => {
               previewUrl={project.previewUrl}
               techStack={project.techStack}
               status={project.status}
+              category={project.category}
+              caseType={project.caseType}
             />
           </motion.li>
         ))}

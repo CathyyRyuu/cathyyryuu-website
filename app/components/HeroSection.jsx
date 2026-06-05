@@ -2,73 +2,78 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 const HeroSection = () => {
   const handleConnect = () => {
     // const resumeURL = "/CathyLiu_BCS_SWE.pdf";
     // window.open(resumeURL, "_blank");
-    const linkedInURL = "https://www.linkedin.com/in/weiqi-liu//";
+    const linkedInURL = "https://www.linkedin.com/in/weiqi-liu/";
     window.open(linkedInURL, "_blank");
   };
 
   return (
-    <section className="lg:py-16">
-      <div className="grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I'm{" "}
-            </span>
-            <br></br>
-            <TypeAnimation
-              sequence={[
-                // Same substring at the start will only be typed out once, initially
-                "Cathy",
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
-                "Software Engineer",
-                1000,
-                // "Full Stack Developer",
-                // 1000,
-                // "Passionate about FinTech",
-                // 1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+    <section className="pb-12 lg:pb-16">
+      <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="text-center sm:text-left">
+          <p className="eyebrow mb-5">AI Solutions Architect</p>
+          <h1 className="mb-5 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Transforming business workflows with{" "}
+            <span className="text-sky-300">AI.</span>
           </h1>
 
-          <p className="text-white text-base sm:text-lg lg:text-xl">
-            {`"When you want something, all the universe conspires in helping you
-            to achieve it."`}
+          <p className="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            I help organizations identify process bottlenecks, align
+            stakeholders, and implement AI solutions that deliver measurable
+            business outcomes.
           </p>
-          <footer className="text-white mt-2 mb-6 font-semibold text-sm">
-            {`- Paulo Coelho,`}{" "}
-            <cite className="italic">{`The Alchemist`}</cite>
-          </footer>
+          <p className="mt-4 text-sm uppercase tracking-[0.18em] text-slate-500">
+            Focused on{" "}
+            <TypeAnimation
+              sequence={[
+                "Workflow Transformation",
+                1200,
+                "Enterprise AI & Agentic Systems",
+                1200,
+                "Executive Alignment & Adoption",
+                1200,
+              ]}
+              wrapper="span"
+              speed={45}
+              repeat={Infinity}
+              className="text-sky-300"
+            />
+          </p>
 
-          <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white">
-              {`Hi There :)`}
-            </button>
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
             <button
-              className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover: bg-slate-800 text-white mt-3 animate-bounce"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-200 sm:w-fit"
               onClick={handleConnect}
             >
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                Connect
-              </span>
+              Connect on LinkedIn
+              <ArrowTopRightOnSquareIcon className="h-4 w-4" />
             </button>
+            <a
+              href="#case-studies"
+              className="inline-flex w-full items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-sky-300 hover:text-white sm:w-fit"
+            >
+              View case studies
+            </a>
           </div>
         </div>
-        <div className="col-span-4 place-self-center mt-4 lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+        <div className="place-self-center">
+          <div className="surface-panel relative h-[280px] w-[280px] overflow-hidden rounded-[2rem] sm:h-[360px] sm:w-[360px]">
+            <div className="absolute inset-x-8 top-8 h-px bg-white/15" />
+            <div className="absolute bottom-5 left-5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-300">
+              Vancouver, BC
+            </div>
             <Image
-              src="/images/memoji.png"
+              src="/images/Memoji.png"
               alt="my memoji"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              className="absolute left-1/2 top-1/2 w-[72%] -translate-x-1/2 -translate-y-1/2"
               width={300}
               height={300}
+              priority
             />
           </div>
         </div>

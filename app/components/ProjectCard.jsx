@@ -1,8 +1,21 @@
 import React from "react";
-import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowPathIcon,
+  CodeBracketIcon,
+  DocumentMagnifyingGlassIcon,
+  EyeIcon,
+  ServerStackIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
 import FirecrackerAnimatedIcon from "./AnimatedIcons/FirecrackerAnimatedIconWrapper";
 import MaintenanceAnimatedIcon from "./AnimatedIcons/MaintenanceAnimatedIconWrapper";
+
+const caseStudyIcons = {
+  finance: ArrowPathIcon,
+  legal: DocumentMagnifyingGlassIcon,
+  knowledge: ServerStackIcon,
+  technology: ServerStackIcon,
+};
 
 const ProjectCard = ({
   imgUrl,
@@ -12,49 +25,76 @@ const ProjectCard = ({
   previewUrl,
   techStack,
   status,
+  category,
+  caseType,
 }) => {
+  const CaseStudyIcon = caseStudyIcons[caseType] || DocumentMagnifyingGlassIcon;
+  const hasActions = gitUrl || previewUrl;
+
   return (
-    <div>
-      <div
-        className="h-52 md:h-72 rounded-t-xl relative group"
-        style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
-      >
-        <div className='className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500'>
-          <Link
-            href={gitUrl}
-            className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
-          </Link>
-          <Link
-            href={previewUrl}
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <EyeIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
-          </Link>
+    <article className="group h-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#111318] transition duration-300 hover:-translate-y-1 hover:border-sky-300/50">
+      {imgUrl ? (
+        <div
+          className="relative h-52 overflow-hidden md:h-64"
+          style={{ background: `url(${imgUrl}) center/cover` }}
+        >
+          {hasActions && (
+            <div className="absolute inset-0 flex items-center justify-center bg-[#08090b]/0 opacity-0 transition duration-300 group-hover:bg-[#08090b]/80 group-hover:opacity-100">
+              {gitUrl && (
+                <Link
+                  href={gitUrl}
+                  className="relative mr-2 h-12 w-12 rounded-full border border-white/20 bg-white/5 transition hover:border-sky-300 hover:bg-sky-300/10 group/link"
+                  aria-label={`${title} source code`}
+                >
+                  <CodeBracketIcon className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-slate-300 group-hover/link:text-white" />
+                </Link>
+              )}
+              {previewUrl && (
+                <Link
+                  href={previewUrl}
+                  className="relative h-12 w-12 rounded-full border border-white/20 bg-white/5 transition hover:border-sky-300 hover:bg-sky-300/10 group/link"
+                  aria-label={`${title} preview`}
+                >
+                  <EyeIcon className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-slate-300 group-hover/link:text-white" />
+                </Link>
+              )}
+            </div>
+          )}
         </div>
-      </div>
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818] px-4 py-6">
-        <h5 className="font-xl font-semibold flex gap-2 mb-2">
-          {title}
-          {status === "Deployed" && <FirecrackerAnimatedIcon />}
-          {status === "Coding ..." && <MaintenanceAnimatedIcon />}
-        </h5>
-        <p className="mb-2 text-[#ADB7BE]">{description}</p>
+      ) : (
+        <div className="relative flex h-52 items-center justify-center overflow-hidden bg-[#0d0f13] md:h-64">
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(125,211,252,0.16),transparent_42%),linear-gradient(315deg,rgba(255,255,255,0.08),transparent_36%)]" />
+          <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-sky-300/20 bg-sky-300/10">
+            <CaseStudyIcon className="h-10 w-10 text-sky-200" />
+          </div>
+        </div>
+      )}
+      <div className="flex min-h-[15rem] flex-col px-5 py-5 text-white">
+        <div className="mb-3 flex items-start justify-between gap-3">
+          <h5 className="text-lg font-semibold leading-6 tracking-tight">
+            {title}
+          </h5>
+          <span className="flex shrink-0 items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[0.68rem] uppercase tracking-[0.14em] text-slate-300">
+            {status === "Deployed" && <FirecrackerAnimatedIcon />}
+            {status === "Coding ..." && <MaintenanceAnimatedIcon />}
+            {category || (status === "Coding ..." ? "Building" : status)}
+          </span>
+        </div>
+        <p className="mb-4 text-sm leading-6 text-slate-400">{description}</p>
         {techStack?.length > 0 && (
-          <div className="text-[#ADB7BE] font-semibold text-sm flex flex-wrap gap-x-2 gap-y-1">
-            {techStack.map((tech, idx) => (
-              <span key={idx}>
+          <div className="mt-auto flex flex-wrap gap-2 text-xs font-medium text-slate-300">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1"
+              >
                 {tech}
-                {idx !== techStack.length - 1 && (
-                  <span className="pl-2">•</span>
-                )}
               </span>
             ))}
           </div>
         )}
       </div>
-    </div>
+    </article>
   );
 };
 

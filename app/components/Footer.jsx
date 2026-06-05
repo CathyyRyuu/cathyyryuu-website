@@ -4,13 +4,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer border z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white">
-      <div className="container p-12 flex justify-between mx-auto">
-        <span className="text-center">LOGO</span>
-        <p className="text-slate-600 text-center">
+    <footer className="border-t border-white/10 text-white">
+      <div className="section-shell flex flex-col gap-3 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <span className="font-semibold uppercase tracking-[0.28em] text-slate-300">Cathy Liu</span>
+        <p>
           &copy; {currentYear} All Rights Reserved.
         </p>
-        <p className="text-slate-600 text-center">
+        <p>
           Created with Next.js
         </p>
       </div>

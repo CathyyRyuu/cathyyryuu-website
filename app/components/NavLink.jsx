@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import Link from "next/link";
 
-const NavLink = ({ href, title}) => {
+const NavLink = ({ href, title }) => {
   return (
-    <Link 
-      href={href} 
-      className='rounded-md px-2 py-2 text-md font-medium text-gray-300 uppercase hover:bg-gray-700 hover:text-white'
+    <Link
+      href={href}
+      className="rounded-full px-3 py-2 text-sm font-medium uppercase tracking-[0.18em] text-slate-400 transition hover:bg-white/5 hover:text-white"
     >
       {title}
     </Link>

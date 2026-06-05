@@ -5,23 +5,29 @@ import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectSection";
 import EmailSection from "./components/EmailSection";
 import AchievementsSection from "./components/AchievementsSection"
+import ServiceLadderSection from "./components/ServiceLadderSection";
+import HowIWorkSection from "./components/HowIWorkSection";
 import Footer from "./components/Footer";
 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
+    <main className="min-h-screen overflow-hidden bg-[#08090b] text-white">
       <Navbar />
-      <div className="w-full bg-[url('/images/space_bg_1.avif')] bg-cover bg-center bg-no-repeat">
-        <div className="container mt-24 mx-auto px-12 py-4 mb-12">
-          <HeroSection />
-          <AchievementsSection />
-        </div>
+      <div className="section-shell pt-28 sm:pt-32">
+        <HeroSection />
+        <AchievementsSection />
+        <ServiceLadderSection />
+        <HowIWorkSection />
       </div>
-      <div className="container mt-4 mx-auto px-12 py-4">
+      <div className="section-shell py-12 lg:py-20">
         <AboutSection />
         <ProjectsSection />
-        <EmailSection />
+      </div>
+      <div className="border-y border-white/10 bg-white/[0.025]">
+        <div className="section-shell">
+          <EmailSection />
+        </div>
       </div>
       <Footer />
     </main>

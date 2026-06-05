@@ -1,111 +1,136 @@
 "use client";
-import React from "react";
-import dynamic from "next/dynamic";
-import RingProgress from "./RingProgress";
+import React, { useMemo, useState } from "react";
+import { motion } from "framer-motion";
 
-const AnimatedNumbers = dynamic(
-  () => {
-    return import("react-animated-numbers");
-  },
-  { ssr: false }
-);
-
-const achievementsList = [
+const focusAreas = [
   {
-    metric: "Projects",
-    value: "10",
-    postfix: "+",
+    id: "process",
+    label: "Process",
+    title: "Business Process Analysis",
+    description:
+      "I start by understanding how teams work today: where decisions happen, where handoffs break down, and where manual review creates risk or delay.",
+    details: ["Workflow mapping", "Pain-point discovery", "Use case prioritization"],
   },
   {
-    prefix: "~",
-    metric: "Users",
-    value: "10000",
+    id: "strategy",
+    label: "Strategy",
+    title: "AI Strategy",
+    description:
+      "I help organizations evaluate which AI opportunities are worth pursuing, how to sequence them, and what business outcomes should define success.",
+    details: ["Opportunity assessment", "ROI framing", "Governance planning"],
   },
   {
-    metric: "Years",
-    value: "3",
-    postfix: "+",
-  },
-];
-
-const progressList = [
-  {
-    label: "Backend",
-    value: 93,
-    outOf: 100,
+    id: "automation",
+    label: "Automation",
+    title: "Workflow Automation",
+    description:
+      "I translate operational bottlenecks into practical AI-enabled workflows with the right balance of automation, human review, and auditability.",
+    details: ["Future-state workflows", "RAG systems", "Human-in-the-loop controls"],
   },
   {
-    label: "Frontend",
-    value: 90,
-    outOf: 100,
+    id: "technical",
+    label: "Technology",
+    title: "Technical Architecture",
+    description:
+      "I design the system layer that makes AI workflows viable in enterprise environments: data flow, permissions, integrations, APIs, and the architecture required for existing systems to communicate safely.",
+    details: ["LLM architecture", "AWS", "System design", "Data integrations", "Permission models", "API architecture"],
   },
   {
-    label: "AI Agent",
-    value: 80,
-    outOf: 100,
+    id: "alignment",
+    label: "Alignment",
+    title: "Stakeholder Alignment",
+    description:
+      "I work across technical and business teams to make assumptions, constraints, tradeoffs, and ownership clear before implementation begins.",
+    details: ["Executive communication", "Change management", "Cross-functional planning"],
   },
   {
-    label: "UI/UX",
-    value: 98,
-    outOf: 100,
+    id: "executive",
+    label: "Executive",
+    title: "Executive Communication",
+    description:
+      "I turn technical architecture and workflow decisions into clear narratives leadership teams can evaluate, fund, and govern with confidence.",
+    details: ["Decision briefs", "Roadmaps", "Implementation guardrails"],
   },
 ];
 
 const AchievementsSection = () => {
+  const [activeId, setActiveId] = useState("process");
+  const activeArea = useMemo(
+    () => focusAreas.find((area) => area.id === activeId),
+    [activeId]
+  );
+
   return (
-    <div className="bg-[#1e1e1e] shadow-lg rounded-3xl px-4 py-6 xl:gap-16 sm:py-12 xl:px-12">
-      <h2 className="text-2xl font-bold text-white mb-6 text-center lg:text-4xl">
-        Skills
-      </h2>
-      {/* Achievements carousel */}
-      <div className="py-4 overflow-x-auto scrollbar-hide">
-        <div className="flex flex-nowrap gap-6 sm:px-4 px-2 snap-x snap-mandatory lg:justify-between">
-          {achievementsList.map((achievement, index) => {
+    <section className="surface-panel rounded-[2rem] p-5 sm:p-8">
+      <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div>
+          <p className="eyebrow mb-3">What I do</p>
+          <h2 className="section-title">Process first. AI second.</h2>
+          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
+            I work at the intersection of business process analysis, AI
+            strategy, workflow automation, technical architecture, stakeholder
+            alignment, and executive communication.
+          </p>
+          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
+            My approach begins with understanding how teams work today before
+            recommending technology solutions.
+          </p>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {focusAreas.map((area) => {
+            const isActive = area.id === activeId;
+
             return (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center mx-4"
+              <button
+                key={area.id}
+                onClick={() => setActiveId(area.id)}
+                className={`rounded-2xl border p-4 text-left transition ${
+                  isActive
+                    ? "border-sky-300 bg-sky-300/10 text-white"
+                    : "border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/25 hover:text-white"
+                }`}
               >
-                <h2 className="text-white text-4xl font-bold flex flex-row">
-                  {achievement.prefix}
-                  <AnimatedNumbers
-                    includeComma
-                    animateToNumber={parseInt(achievement.value)}
-                    locale="en-US"
-                    className="text-white text-2xl font-bold lg:text-4xl"
-                    configs={(_, index) => {
-                      return {
-                        mass: 1,
-                        friction: 100,
-                        tensions: 140 * (index + 1),
-                      };
-                    }}
-                  />
-                  {achievement.postfix}
-                </h2>
-                <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
-              </div>
+                <span className="block text-xs uppercase tracking-[0.18em]">
+                  {area.label}
+                </span>
+                <span className="mt-3 block text-lg font-semibold">
+                  {area.title}
+                </span>
+              </button>
             );
           })}
         </div>
       </div>
 
-      <div className="py-8 px-4 sm:px-8 flex flex-wrap justify-center gap-8 lg:justify-between">
-        {progressList.map((progress, index) => {
-          const percentage = Math.round(
-            (progress.value / progress.outOf) * 100
-          );
-          return (
-            <div key={index} className="flex flex-col items-center space-y-2">
-              <RingProgress percentage={percentage} label={`${percentage}%`} />
-              <p className="text-white text-sm sm:text-base text-center">
-                {progress.label}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+      <motion.div
+        key={activeArea.id}
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.25 }}
+        className="mt-8 grid gap-6 rounded-3xl border border-white/10 bg-[#0d0f13] p-5 sm:p-6 lg:grid-cols-[1fr_0.8fr]"
+      >
+        <div>
+          <h3 className="text-2xl font-semibold tracking-tight text-white">
+            {activeArea.title}
+          </h3>
+          <p className="mt-3 leading-7 text-slate-300">
+            {activeArea.description}
+          </p>
+        </div>
+
+        <div className="flex flex-wrap content-start gap-2">
+          {activeArea.details.map((detail) => (
+            <span
+              key={detail}
+              className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200"
+            >
+              {detail}
+            </span>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   );
 };
 
