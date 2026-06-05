@@ -29,12 +29,12 @@ const ProjectSection = () => {
         <div>
           <p className="eyebrow mb-3">Selected work</p>
           <h2 className='section-title'>
-            Projects
+            Workflow impact, translated into systems
           </h2>
         </div>
         <p className="max-w-xl text-sm leading-6 text-slate-400">
-          A mix of deployed projects and active experiments across web, mobile,
-          data, and AI-assisted product workflows.
+          Sanitized examples of AI workflow transformation alongside personal
+          builds that show the technical foundation behind the advisory work.
         </p>
       </div>
       <div className='mb-8 flex flex-row items-center gap-2 overflow-x-auto text-white'>
@@ -45,13 +45,13 @@ const ProjectSection = () => {
         />
         <ProjectTag 
           onClick={handleTagChange} 
-          name="Web" 
-          isSelected={tag === "Web"}
+          name="Case Studies" 
+          isSelected={tag === "Case Studies"}
         />
         <ProjectTag 
           onClick={handleTagChange} 
-          name="Mobile" 
-          isSelected={tag === "Mobile"}
+          name="Personal Projects" 
+          isSelected={tag === "Personal Projects"}
         />
       </div>
       <ul ref={ref} className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
@@ -73,6 +73,8 @@ const ProjectSection = () => {
               previewUrl={project.previewUrl}
               techStack={project.techStack}
               status={project.status}
+              category={project.category}
+              caseType={project.caseType}
             />
           </motion.li>
         ))}

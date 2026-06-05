@@ -5,6 +5,8 @@ import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectSection";
 import EmailSection from "./components/EmailSection";
 import AchievementsSection from "./components/AchievementsSection"
+import ServiceLadderSection from "./components/ServiceLadderSection";
+import HowIWorkSection from "./components/HowIWorkSection";
 import Footer from "./components/Footer";
 
 
@@ -15,6 +17,8 @@ export default function Home() {
       <div className="section-shell pt-28 sm:pt-32">
         <HeroSection />
         <AchievementsSection />
+        <ServiceLadderSection />
+        <HowIWorkSection />
       </div>
       <div className="section-shell py-12 lg:py-20">
         <AboutSection />

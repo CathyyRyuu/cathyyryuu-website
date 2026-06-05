@@ -5,8 +5,6 @@ import LinkedinIcon from "../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 
-// need domain to set up.
-
 const EmailSection = () => {
   return (
     <section
@@ -20,13 +18,6 @@ const EmailSection = () => {
           I&apos;m always open to thoughtful software, fintech, and AI product
           conversations. LinkedIn is the best place to reach me right now.
         </p>
-        <Image
-          src="/images/business_card.png"
-          alt="Business Card"
-          width={512}
-          height={289}
-          className="my-2 rounded-2xl border border-white/10"
-        />
         <div className="socials mt-5 flex flex-row gap-3">
           <Link
             href="https://github.com/CathyyRyuu"

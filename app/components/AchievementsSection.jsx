@@ -2,76 +2,89 @@
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
-const capabilityData = [
+const focusAreas = [
   {
-    id: "architecture",
-    label: "Architecture",
-    metric: "LLM",
-    title: "Production-ready AI system design",
+    id: "process",
+    label: "Process",
+    title: "Business Process Analysis",
     description:
-      "I design LLM systems that move beyond prototypes: clear retrieval strategy, cloud infrastructure, evaluation loops, cost controls, and reusable implementation patterns.",
-    tools: ["LLMs", "RAG", "Cloud Infrastructure", "Evaluation", "Cost Controls"],
-    proof: "Scaling and documenting AI architectures so solutions are reliable, maintainable, and reusable across teams.",
+      "I start by understanding how teams work today: where decisions happen, where handoffs break down, and where manual review creates risk or delay.",
+    details: ["Workflow mapping", "Pain-point discovery", "Use case prioritization"],
   },
   {
-    id: "legal",
-    label: "Legal AI",
-    metric: "Docs",
-    title: "Legal document intelligence",
+    id: "strategy",
+    label: "Strategy",
+    title: "AI Strategy",
     description:
-      "I convert large, complex legal document corpora into structured, reviewable AI workflows with traceability, guardrails, and human-in-the-loop controls.",
-    tools: ["Contract Analysis", "Document Extraction", "Citations", "Auditability"],
-    proof: "Leading domain-specific AI initiatives such as the Contract Census project for large-scale legal document analysis.",
+      "I help organizations evaluate which AI opportunities are worth pursuing, how to sequence them, and what business outcomes should define success.",
+    details: ["Opportunity assessment", "ROI framing", "Governance planning"],
   },
   {
-    id: "finance",
-    label: "Finance AI",
-    metric: "Risk",
-    title: "AI for finance and accounting operations",
+    id: "automation",
+    label: "Automation",
+    title: "Workflow Automation",
     description:
-      "I design AI-driven reconciliation and review systems that reduce manual work while improving data reliability, control, and operational confidence.",
-    tools: ["AR/AP", "Fixed Assets", "Reconciliation", "Data Reliability"],
-    proof: "Designing reconciliation systems for AR/AP and Fixed Assets to reduce manual review for finance teams.",
+      "I translate operational bottlenecks into practical AI-enabled workflows with the right balance of automation, human review, and auditability.",
+    details: ["Future-state workflows", "RAG systems", "Human-in-the-loop controls"],
   },
   {
-    id: "adoption",
-    label: "Adoption",
-    metric: "HITL",
-    title: "Responsible adoption in high-stakes domains",
+    id: "technical",
+    label: "Technology",
+    title: "Technical Architecture",
     description:
-      "I bridge technical and non-technical teams by making system behavior, limitations, review paths, and long-term ownership explicit.",
-    tools: ["Guardrails", "Stakeholder Alignment", "Product Design", "Documentation"],
-    proof: "Building internal frameworks that help teams adopt AI sustainably beyond any single implementation.",
+      "I design the system layer that makes AI workflows viable in enterprise environments: data flow, permissions, integrations, APIs, and the architecture required for existing systems to communicate safely.",
+    details: ["LLM architecture", "AWS", "System design", "Data integrations", "Permission models", "API architecture"],
+  },
+  {
+    id: "alignment",
+    label: "Alignment",
+    title: "Stakeholder Alignment",
+    description:
+      "I work across technical and business teams to make assumptions, constraints, tradeoffs, and ownership clear before implementation begins.",
+    details: ["Executive communication", "Change management", "Cross-functional planning"],
+  },
+  {
+    id: "executive",
+    label: "Executive",
+    title: "Executive Communication",
+    description:
+      "I turn technical architecture and workflow decisions into clear narratives leadership teams can evaluate, fund, and govern with confidence.",
+    details: ["Decision briefs", "Roadmaps", "Implementation guardrails"],
   },
 ];
 
 const AchievementsSection = () => {
-  const [activeId, setActiveId] = useState("architecture");
-  const activeCapability = useMemo(
-    () => capabilityData.find((capability) => capability.id === activeId),
+  const [activeId, setActiveId] = useState("process");
+  const activeArea = useMemo(
+    () => focusAreas.find((area) => area.id === activeId),
     [activeId]
   );
 
   return (
     <section className="surface-panel rounded-[2rem] p-5 sm:p-8">
-      <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+      <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
-          <p className="eyebrow mb-3">Capability map</p>
-          <h2 className="section-title">What I bring to AI initiatives</h2>
+          <p className="eyebrow mb-3">What I do</p>
+          <h2 className="section-title">Process first. AI second.</h2>
           <p className="mt-4 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
-            Click through the focus areas to see how I design, evaluate, and
-            scale AI systems for legal, finance, and accounting teams.
+            I work at the intersection of business process analysis, AI
+            strategy, workflow automation, technical architecture, stakeholder
+            alignment, and executive communication.
+          </p>
+          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
+            My approach begins with understanding how teams work today before
+            recommending technology solutions.
           </p>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-4">
-          {capabilityData.map((capability) => {
-            const isActive = capability.id === activeId;
+        <div className="grid gap-3 sm:grid-cols-2">
+          {focusAreas.map((area) => {
+            const isActive = area.id === activeId;
 
             return (
               <button
-                key={capability.id}
-                onClick={() => setActiveId(capability.id)}
+                key={area.id}
+                onClick={() => setActiveId(area.id)}
                 className={`rounded-2xl border p-4 text-left transition ${
                   isActive
                     ? "border-sky-300 bg-sky-300/10 text-white"
@@ -79,10 +92,10 @@ const AchievementsSection = () => {
                 }`}
               >
                 <span className="block text-xs uppercase tracking-[0.18em]">
-                  {capability.label}
+                  {area.label}
                 </span>
-                <span className="mt-3 block text-2xl font-semibold">
-                  {capability.metric}
+                <span className="mt-3 block text-lg font-semibold">
+                  {area.title}
                 </span>
               </button>
             );
@@ -91,31 +104,28 @@ const AchievementsSection = () => {
       </div>
 
       <motion.div
-        key={activeCapability.id}
+        key={activeArea.id}
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25 }}
-        className="mt-8 grid gap-6 rounded-3xl border border-white/10 bg-[#0d0f13] p-5 sm:p-6 lg:grid-cols-[1fr_0.9fr]"
+        className="mt-8 grid gap-6 rounded-3xl border border-white/10 bg-[#0d0f13] p-5 sm:p-6 lg:grid-cols-[1fr_0.8fr]"
       >
         <div>
           <h3 className="text-2xl font-semibold tracking-tight text-white">
-            {activeCapability.title}
+            {activeArea.title}
           </h3>
           <p className="mt-3 leading-7 text-slate-300">
-            {activeCapability.description}
-          </p>
-          <p className="mt-5 text-sm leading-6 text-slate-400">
-            {activeCapability.proof}
+            {activeArea.description}
           </p>
         </div>
 
         <div className="flex flex-wrap content-start gap-2">
-          {activeCapability.tools.map((tool) => (
+          {activeArea.details.map((detail) => (
             <span
-              key={tool}
+              key={detail}
               className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200"
             >
-              {tool}
+              {detail}
             </span>
           ))}
         </div>

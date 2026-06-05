@@ -16,27 +16,26 @@ const HeroSection = () => {
     <section className="pb-12 lg:pb-16">
       <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="text-center sm:text-left">
-          <p className="eyebrow mb-5">AI Solution Architect</p>
+          <p className="eyebrow mb-5">AI Solutions Architect</p>
           <h1 className="mb-5 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Designing production-grade AI systems for{" "}
-            <span className="text-sky-300">the enterprise.</span>
+            Transforming business workflows with{" "}
+            <span className="text-sky-300">AI.</span>
           </h1>
 
           <p className="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-            I&apos;m Cathy Liu, an AI Solutions Architect focused on practical,
-            production-ready AI systems for legal, finance, and accounting
-            teams where accuracy, transparency, and operational reliability
-            matter as much as innovation.
+            I help organizations identify process bottlenecks, align
+            stakeholders, and implement AI solutions that deliver measurable
+            business outcomes.
           </p>
           <p className="mt-4 text-sm uppercase tracking-[0.18em] text-slate-500">
             Focused on{" "}
             <TypeAnimation
               sequence={[
-                "RAG architecture",
+                "Workflow Transformation",
                 1200,
-                "document intelligence",
+                "Enterprise AI & Agentic Systems",
                 1200,
-                "human-in-the-loop AI",
+                "Executive Alignment & Adoption",
                 1200,
               ]}
               wrapper="span"
@@ -55,10 +54,10 @@ const HeroSection = () => {
               <ArrowTopRightOnSquareIcon className="h-4 w-4" />
             </button>
             <a
-              href="#projects"
+              href="#case-studies"
               className="inline-flex w-full items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-sky-300 hover:text-white sm:w-fit"
             >
-              View projects
+              View case studies
             </a>
           </div>
         </div>
