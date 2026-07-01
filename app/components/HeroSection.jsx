@@ -54,27 +54,11 @@ const HeroSection = () => {
               <ArrowTopRightOnSquareIcon className="h-4 w-4" />
             </button>
             <a
-              href="#case-studies"
+              href="#projects"
               className="inline-flex w-full items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-sky-300 hover:text-white sm:w-fit"
             >
               View case studies
             </a>
-          </div>
-        </div>
-        <div className="place-self-center">
-          <div className="surface-panel relative h-[280px] w-[280px] overflow-hidden rounded-[2rem] sm:h-[360px] sm:w-[360px]">
-            <div className="absolute inset-x-8 top-8 h-px bg-white/15" />
-            <div className="absolute bottom-5 left-5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-300">
-              Vancouver, BC
-            </div>
-            <Image
-              src="/images/Memoji.png"
-              alt="my memoji"
-              className="absolute left-1/2 top-1/2 w-[72%] -translate-x-1/2 -translate-y-1/2"
-              width={300}
-              height={300}
-              priority
-            />
           </div>
         </div>
       </div>

@@ -79,15 +79,21 @@ const AboutSection = () => {
   return (
     <section id="about" className="scroll-mt-24 text-white">
       <div className="grid gap-10 py-12 md:grid-cols-[0.9fr_1.1fr] md:items-center lg:py-20">
-        <div className="surface-panel w-full overflow-hidden rounded-[2rem] p-4">
-          <Image
-            src="/images/about-image.png"
-            alt="About Image"
-            width={500}
-            height={500}
-            className="rounded-3xl"
-          />
-          <p className="mt-3 text-center text-xs uppercase tracking-[0.18em] text-slate-500">{`Image generated with ChatGPT`}</p>
+        <div className="place-self-center w-full max-w-[260px] sm:max-w-[300px]">
+          <div className="surface-panel relative aspect-[9/16] w-full overflow-hidden rounded-[2rem]">
+            <div className="absolute inset-x-8 top-8 z-10 h-px bg-white/15" />
+            <div className="absolute bottom-5 left-5 z-10 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-300">
+              Vancouver, BC
+            </div>
+            <Image
+              src="/images/shibuya_sky.JPG"
+              alt="shibuya sky"
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 260px, 300px"
+              priority
+            />
+          </div>
         </div>
         <div className="flex h-full flex-col text-left">
           <p className="eyebrow mb-3">About</p>
