@@ -20,7 +20,7 @@
     "react-animated-numbers": "^0.17.1",
     "react-dom": "^18",
     "react-type-animation": "^3.2.0",
-    "resend": "^2.0.0"
+    "resend": "^6.34.1"
   },
   "devDependencies": {
     "@types/node": "^20",
