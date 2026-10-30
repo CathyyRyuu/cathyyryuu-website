@@ -1,0 +1,43 @@
+# Dependabot checks for outdated and vulnerable packages, creates a branch per
+# update, and opens a PR against main. It only reads this file from the
+# default branch, so it starts working once this is merged into main.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+      time: "09:00" # UTC
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+    commit-message:
+      prefix: "deps"
+    groups:
+      # Security fixes land together in one PR so they can be merged fast.
+      security:
+        applies-to: security-updates
+        patterns: ["*"]
+      # Routine minor/patch bumps are batched into one monthly PR.
+      minor-and-patch:
+        applies-to: version-updates
+        update-types: [minor, patch]
+        patterns: ["*"]
+      # Majors (e.g. next 14 -> 15) still get their own PR each, since they
+      # can need code changes.
+    ignore:
+      # @types/node follows the Node runtime, which node-version.yml bumps.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    labels:
+      - dependencies
+    commit-message:
+      prefix: "ci"
+    groups:
+      actions:
+        patterns: ["*"]
