@@ -17,17 +17,20 @@ const HeroSection = () => {
       <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="text-center sm:text-left">
           <p className="eyebrow mb-5">AI Solutions Architect</p>
-          <h1 className="mb-5 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="mb-5 max-w-4xl font-display text-5xl font-black tracking-tight text-ink sm:text-6xl lg:text-7xl">
             Transforming business workflows with{" "}
-            <span className="text-sky-300">AI.</span>
+            <span className="relative whitespace-nowrap text-accent-deep">
+              AI.
+              <span aria-hidden className="absolute bottom-2 left-0 right-3 -z-10 h-3 rounded-full bg-clay-pale sm:bottom-3 sm:h-4" />
+            </span>
           </h1>
 
-          <p className="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+          <p className="max-w-2xl text-base leading-8 text-ink-soft sm:text-lg">
             I help organizations identify process bottlenecks, align
             stakeholders, and implement AI solutions that deliver measurable
             business outcomes.
           </p>
-          <p className="mt-4 text-sm uppercase tracking-[0.18em] text-slate-500">
+          <p className="mt-4 font-hand text-base text-ink-faint">
             Focused on{" "}
             <TypeAnimation
               sequence={[
@@ -41,13 +44,13 @@ const HeroSection = () => {
               wrapper="span"
               speed={45}
               repeat={Infinity}
-              className="text-sky-300"
+              className="font-semibold text-clay-deep"
             />
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
             <button
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-200 sm:w-fit"
+              className="btn-primary w-full sm:w-fit"
               onClick={handleConnect}
             >
               Connect on LinkedIn
@@ -55,7 +58,7 @@ const HeroSection = () => {
             </button>
             <a
               href="#projects"
-              className="inline-flex w-full items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-sky-300 hover:text-white sm:w-fit"
+              className="btn-secondary w-full sm:w-fit"
             >
               View case studies
             </a>
