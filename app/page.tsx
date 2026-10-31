@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#08090b] text-white">
+    <main className="min-h-screen overflow-hidden text-ink">
       <Navbar />
       <div className="section-shell pt-28 sm:pt-32">
         <HeroSection />
@@ -22,7 +22,7 @@ export default function Home() {
         <AboutSection />
         <ProjectsSection />
       </div>
-      <div className="border-y border-white/10 bg-white/[0.025]">
+      <div className="border-y-2 border-dashed border-line bg-paper-deep/40">
         <div className="section-shell">
           <EmailSection />
         </div>

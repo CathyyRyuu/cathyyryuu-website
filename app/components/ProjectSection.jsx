@@ -32,12 +32,12 @@ const ProjectSection = () => {
             Workflow impact, translated into systems
           </h2>
         </div>
-        <p className="max-w-xl text-sm leading-6 text-slate-400">
+        <p className="max-w-xl text-sm leading-6 text-ink-soft">
           Sanitized examples of AI workflow transformation alongside personal
           builds that show the technical foundation behind the advisory work.
         </p>
       </div>
-      <div className='mb-8 flex flex-row items-center gap-2 overflow-x-auto text-white'>
+      <div className='mb-8 flex flex-row items-center gap-2 overflow-x-auto px-1 pb-2 pt-1'>
         <ProjectTag 
           onClick={handleTagChange} 
           name="All" 
