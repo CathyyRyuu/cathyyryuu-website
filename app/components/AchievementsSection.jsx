@@ -66,12 +66,12 @@ const AchievementsSection = () => {
         <div>
           <p className="eyebrow mb-3">What I do</p>
           <h2 className="section-title">Process first. AI second.</h2>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
+          <p className="mt-4 max-w-xl text-sm leading-7 text-ink-soft sm:text-base">
             I work at the intersection of business process analysis, AI
             strategy, workflow automation, technical architecture, stakeholder
             alignment, and executive communication.
           </p>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
+          <p className="mt-4 max-w-xl text-sm leading-7 text-ink-soft sm:text-base">
             My approach begins with understanding how teams work today before
             recommending technology solutions.
           </p>
@@ -85,16 +85,14 @@ const AchievementsSection = () => {
               <button
                 key={area.id}
                 onClick={() => setActiveId(area.id)}
-                className={`rounded-2xl border p-4 text-left transition ${
-                  isActive
-                    ? "border-sky-300 bg-sky-300/10 text-white"
-                    : "border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/25 hover:text-white"
+                className={`toggle rounded-2xl p-4 text-left ${
+                  isActive ? "toggle-active" : "toggle-idle"
                 }`}
               >
-                <span className="block text-xs uppercase tracking-[0.18em]">
+                <span className="block font-hand text-sm font-normal">
                   {area.label}
                 </span>
-                <span className="mt-3 block text-lg font-semibold">
+                <span className="mt-2 block text-lg">
                   {area.title}
                 </span>
               </button>
@@ -108,13 +106,13 @@ const AchievementsSection = () => {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25 }}
-        className="mt-8 grid gap-6 rounded-3xl border border-white/10 bg-[#0d0f13] p-5 sm:p-6 lg:grid-cols-[1fr_0.8fr]"
+        className="surface-inset mt-8 grid gap-6 p-5 sm:p-6 lg:grid-cols-[1fr_0.8fr]"
       >
         <div>
-          <h3 className="text-2xl font-semibold tracking-tight text-white">
+          <h3 className="font-display text-2xl font-bold tracking-tight text-ink">
             {activeArea.title}
           </h3>
-          <p className="mt-3 leading-7 text-slate-300">
+          <p className="mt-3 leading-7 text-ink-soft">
             {activeArea.description}
           </p>
         </div>
@@ -123,7 +121,7 @@ const AchievementsSection = () => {
           {activeArea.details.map((detail) => (
             <span
               key={detail}
-              className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200"
+              className="chip px-3 py-1.5 text-sm"
             >
               {detail}
             </span>

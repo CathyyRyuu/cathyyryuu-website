@@ -15,7 +15,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Compare .nvmrc with latest LTS
         id: lts
@@ -33,7 +33,7 @@ jobs:
             echo "Node $current is the latest LTS"
           fi
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         if: steps.lts.outputs.outdated == 'true'
         with:
           node-version: ${{ steps.lts.outputs.latest }}
@@ -47,7 +47,7 @@ jobs:
           npm pkg set engines.node="${LATEST}.x"
           npm install --save-dev "@types/node@^${LATEST}"
 
-      - uses: peter-evans/create-pull-request@v7
+      - uses: peter-evans/create-pull-request@v8
         if: steps.lts.outputs.outdated == 'true'
         with:
           # PRs opened with GITHUB_TOKEN don't trigger CI. Add a fine-grained

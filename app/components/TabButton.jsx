@@ -8,12 +8,12 @@ const variants = {
 
 const TabButton = ({ active, selectTab, children}) => {
   const buttonClasses = active
-    ? 'border-sky-300 bg-sky-300/10 text-white'
-    : 'border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/25 hover:text-white'
+    ? 'toggle-active'
+    : 'toggle-idle'
   return (
     <button
       onClick={selectTab}
-      className={`relative rounded-full border px-4 py-2 text-sm font-semibold transition ${buttonClasses}`}
+      className={`toggle relative px-4 py-2 text-sm ${buttonClasses}`}
     >
       <p>
         {children}
@@ -21,7 +21,7 @@ const TabButton = ({ active, selectTab, children}) => {
       <motion.div
         animate={active ? "active" : "default"}
         variants={variants}
-        className='absolute inset-x-3 bottom-1 h-px bg-sky-300'
+        className='absolute inset-x-3 bottom-1 h-0.5 rounded-full bg-accent'
       ></motion.div>
     </button>
   )
