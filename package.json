@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "24.x"
+    "node": "26.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -23,7 +23,7 @@
     "resend": "^2.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^26.6.6",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.6.2",
